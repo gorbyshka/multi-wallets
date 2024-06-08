@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useWeb3Modal } from "@web3modal/wagmi/react";
+import "./App.css";
+import { LuNetwork } from "react-icons/lu";
+const App = () => {
 
-function App() {
+  const { open } = useWeb3Modal();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <w3m-button />
+
+      <button className="network-btn" onClick={() => open({ view: "Networks" })}>
+
+        <LuNetwork size={30} />
+
+      </button>
+
     </div>
   );
-}
+};
 
 export default App;
